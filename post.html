@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="stayle.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&t" />
+<script src="./node_modules/axios/dist/axios.min.js"></script>
+    
+</head>
+<body>
+    <div style="display: flex; justify-content: center; align-items: center; position: fixed; top: 0px; bottom: 0px; left: 0px;right: 0px; margin: auto; background: #858585b6; width: 100px; height: 100px; border-radius: 10px; z-index: 9999;" id="lolo">
+    <span class="loader"></span>
+    </div>
+    <div class="alert">
+        <div>
+            <img src="imges/true.jpeg" alt="">
+            <h2>تم التسجيل الدخول بنجاح</h2>
+        </div>
+    </div>
+    <div id="mod2" style="height: 100vh; width: 100%; display: flex; justify-content: center; position: absolute; display: none; align-items: center;" >
+    <div class="model">
+        <div>
+            <label for="name1">name</label>
+            <input type="text" placeholder="name" id="name1">
+        </div>
+        <div>
+            <label for="password">password</label>
+            <input type="password" placeholder="password" id="password">
+        </div>
+       <button id="cancel">cancel</button>
+       <button id="login2">login</button>
+       <h2 id="error"></h2>
+    </div>
+    </div>
+    <div id="mod3" style="height: 100vh; width: 100%; display: flex; justify-content: center; position: absolute; display: none; align-items: center;" >
+    <div class="model">
+        <div>
+            <label for="name2">name:</label>
+            <input type="text" placeholder="name" id="name2">
+        </div>
+        <div>
+            <label for="password2">password:</label>
+            <input type="password" placeholder="password" id="password2">
+        </div>
+                <div>
+            <label for="username">username:</label>
+            <input type="text" placeholder="username" id="username">
+        </div>
+                <div>
+            <label for="email">email:</label>
+            <input type="email" placeholder="email" id="email">
+        </div>
+                <div>
+            <label for="image">image:</label>
+            <input type="file" placeholder="image" id="image">
+        </div>
+       <button id="cancel2">cancel</button>
+       <button id="Register2">Register</button>
+       <h2 id="error2"></h2>
+    </div>
+    </div>
+    <div class="continr">
+       <div class="left">
+        <h3 onclick="location = 'index.html'">Tarmeez</h3>
+        <h3 onclick="protfileine()">Home</h3>
+       <span onclick="protfileine()">Profile</span>
+       </div>
+       <div>
+        <img id="img9"  src="imges/user.png" alt="" style="width: 40px; height: 40px; border: 1px solid #000000; border-radius: 50px;">
+        <span id="Profile"></span>
+       <button onclick="getLogin()" id="log">Login</button>
+       <button id="rej">Register</button>
+       <button id="logout">logout</button>
+    
+       </div>
+    </div>
+    <div class="content" >
+        <div class="postats2">
+
+        </div>
+    </div>
+       <div id ="alet7" style="height: 100vh; width: 100%;  justify-content: center; position: fixed; align-items: center; z-index: -1; display: none; " >
+       </div>
+</body>
+<script src="main.js"></script>
+<script>
+let coments2 =''
+    let postats2 = document.querySelector('.postats2')
+ let urlsearch = new URLSearchParams(window.location.search)
+ let id = urlsearch.get('postId')
+function post8(){
+
+  getloder(true)
+ axios.get(`https://tarmeezacademy.com/api/v1/posts/${id}`)
+ .then(response =>{
+  getloder(false)
+
+    let elpost = response.data.data
+     coments2 = elpost.comments
+    const image = typeof elpost.image == 'string'
+    let profaile =typeof elpost.author.profile_image == 'object' ? 'imges/user.png': elpost.author.profile_image
+    let coment_post = ''
+   let content = `
+    <div class="post2">
+                <div class="hedars">
+                    <img src="${profaile}" alt=""><span>${elpost.author.username}</span>
+                </div>
+                <div class="bode">
+                   ${image ? `<img src="${elpost.image}" alt="">`:'' }  
+                    <p>${elpost.created_at}</p>
+                    <h2>${elpost.title? elpost.title : '' }</h2>
+                    <h5>${elpost.body}</h5>
+                </div>
+                <div class="foter">
+                  <span class="material-symbols-outlined">edit</span> <h3>(${elpost.comments_count})comment</h3> 
+                </div>
+            </div>
+             <div class="coments" style="background: rgb(255, 255, 255); width: 100%; display: flex; align-items: center; justify-content: center; flex-direction: column;">
+
+
+
+            </div>
+          ${localStorage.getItem('token') ? '<div style="margin-bottom:20px;background: rgb(255, 255, 255); padding: 10px;"><input type="text" id ="sendInput" style="width: 90%; padding-block: 5px;"><button class="send" onclick ="send9()">send</button></div>' : ''}
+
+   `
+   postats2.innerHTML = content
+
+ let coments = document.querySelector('.coments')
+
+        coments2.forEach(element => {
+        coment_post += `
+           <div class="coment" style="background: rgb(173, 224, 255);width: 90%; padding: 10px; margin: 10px; border-radius: 10px;">
+                <div class="com-tit">
+                    <img src="${typeof element.author.profile_image == 'object'? 'imges/user.png' : element.author.profile_image}" alt="" style="height: 40px; width: 40px; border-radius: 50px;">
+                    <b>${element.author.username}</b>
+                </div>
+                <p class="masseg">${element.body}</p>
+           </div>
+        `
+        coments.innerHTML = coment_post
+    });
+
+ })
+ }
+ post8()
+function send9(){
+    let token = localStorage.getItem('token')
+let sendInput = document.querySelector('#sendInput').value
+ let masseg = {
+     "body": sendInput
+ }
+
+axios.post(`https://tarmeezacademy.com/api/v1/posts/${id}/comments`,masseg,{
+    headers : {
+        "authorization":`Bearer ${token}`
+    }
+})
+ .then(respons => {
+post8()
+    alet2( '#9cff9c74','تم نشر الرسالة بتجاح')
+ })
+ .catch(erore => {
+    alet2( '#ff3636',erore.response.data.message)
+ })
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</html>

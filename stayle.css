@@ -1,0 +1,433 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: #f1efef;
+}
+.continr{
+    background: #ffffff;
+    margin: auto;
+    max-width:700px;
+    height: 70px;
+    border-radius: 10px;
+    box-shadow: #aaaaaa 5px 5px 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: 10px;
+    padding-top: 10px;
+}
+.left{
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+.left span{
+    color: #838383;
+    cursor: pointer;
+}
+.left h3{
+    cursor: pointer;
+
+}
+.continr div button{
+    padding: 10px;
+    border: #2ac100 1px solid;
+    color: #2ac100;
+    border-radius: 5px;
+    background: #ffffff;
+    transition: 0.3s;
+}
+.continr div button:hover{
+ color: white;
+ background: #2ac100;
+ border-color: #000000;
+}
+.continr div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.content{
+        margin: auto;
+        max-width:700px;
+}
+
+.postats{
+
+    height: 100vh;
+   
+}
+
+.content .postats .post{
+        margin-top: 20px;
+   background: rgb(255, 255, 255);
+   border: #797979 1px solid;
+   box-shadow: #797979 5px 5px 5px;
+   
+}
+.content .postats .post .hedars{
+   background: rgb(228, 228, 228);
+   display: flex;
+   align-items: center;
+   padding: 0;
+   padding: 3px;
+   padding-left: 7px;
+   border-bottom: #797979 1px solid;
+}
+.content .postats .post .hedars img{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 5px;
+
+}
+.content .postats .post .bode{
+padding: 5px;
+   border-bottom: #797979 1px solid;
+
+}
+.content .postats .post .bode img{
+    width: 100%;
+    height: 350px;
+}
+
+.content .postats .post .bode p{
+    margin: 0px;
+    color:#838383 ;
+}
+.content .postats .post .bode h2,
+.content .postats .post .bode h5
+{
+    margin: 5px;
+}
+.content .postats .post .bode h5{
+    font-size: 15px;
+    color: #3e3e3e;
+}
+.content .postats .post .foter{
+   background: rgb(228, 228, 228);
+ padding: 0.1px;
+ padding-left: 5px;
+ display: flex;
+ align-items: center;
+}
+
+
+.model{
+    background: white;
+    width: 300px;
+    height: 160px;
+    padding: 20px;
+   border: #000000 1px solid;
+   border-radius: 10px;
+}
+
+.model div{
+    display: flex;
+    flex-direction:column;
+    margin-top: 20px;
+}
+
+
+.model div label{
+    margin-bottom: 5px;
+}
+.model button{
+    margin-top: 10px;
+}
+#cancel{
+       padding: 7px;
+    border: #ff3939 1px solid;
+    color: #ff3939;
+    border-radius: 5px;
+    background: #ffffff;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+#login2,#creat,#update{
+       padding: 7px;
+    border: #2ac100 1px solid;
+    color: #2ac100;
+    border-radius: 5px;
+    background: #ffffff;
+    transition: 0.3s;
+    cursor: pointer;
+   margin-left: 10px;
+}
+
+#error{
+    color: red;
+}
+#logout ,#cancel11 {
+    padding: 10px;
+    border: #c10000 1px solid;
+    color: #c10000;
+    border-radius: 5px;
+    background: #ffffff;
+    transition: 0.3s;
+    cursor: pointer;
+   margin-left: 10px;
+}
+
+
+#logout:hover{
+    background: #c10000;
+    color: #fff;
+
+}
+.alert{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    position: absolute;
+    width: 100%;
+  display: none;
+  transition: 0.3s all;
+}
+.alert div{
+    background: white;
+    border-radius: 10px;
+    padding: 7px;
+    box-shadow: 5px 5px 5px #4a4a4a;
+
+
+}
+#mod3 .model{
+    background: white;
+    width: 300px;
+    height: 350px;
+    padding: 20px;
+   border: #000000 1px solid;
+   border-radius: 10px;
+}
+
+#Register2,#cancel2,#cancel1{
+        padding: 7px;
+    border-radius: 5px;
+    background: #ffffff;
+    transition: 0.3s;
+    cursor: pointer;
+
+}
+
+#Register2{
+    border: #2ac100 1px solid;
+    color: #2ac100;
+}
+#cancel2,#cancel1{
+    border: #c10000 1px solid;
+    color: #c10000; 
+}
+
+.addInPost{
+    height: 100vh;
+    width: 100%;
+}
+.addInPost span{
+    position: fixed;
+    right:40px;
+    bottom: 30px;
+    background: white;
+    font-size: 50px;
+    border-radius: 50px;
+    border: 1px solid #000000;
+    cursor: pointer;
+}
+
+
+#mod4 .model{
+    height: 350px;
+}
+#mod4 .model div #body{
+  width: 100%;
+  height: 100px;
+}
+#mod4 .model div{
+    margin-bottom: 20px;
+}
+
+#mod4 .model div #img1{
+border: 1px solid #000000;
+
+}
+
+
+
+
+.content{
+        margin: auto;
+        max-width:700px;
+}
+
+.postats2{
+
+    height: 100vh;
+}
+
+.content .postats2 .post2{
+        margin-top: 20px;
+   background: rgb(255, 255, 255);
+   border: #797979 1px solid;
+   box-shadow: #797979 5px 5px 5px;
+   
+}
+.content .postats2 .post2 .hedars{
+   background: rgb(228, 228, 228);
+   display: flex;
+   align-items: center;
+   padding: 0;
+   padding: 3px;
+   padding-left: 7px;
+   border-bottom: #797979 1px solid;
+}
+.content .postats2 .post2 .hedars img{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 5px;
+
+}
+.content .postats2 .post2 .bode{
+padding: 5px;
+   border-bottom: #797979 1px solid;
+
+}
+.content .postats2 .post2 .bode img{
+    width: 100%;
+    height: 350px;
+}
+
+.content .postats2 .post2 .bode p{
+    margin: 0px;
+    color:#838383 ;
+}
+.content .postats2 .post2 .bode h2,
+.content .postats2 .post2 .bode h5
+{
+    margin: 5px;
+}
+.content .postats2 .post2 .bode h5{
+    font-size: 15px;
+    color: #3e3e3e;
+}
+.content .postats2 .post2 .foter{
+   background: rgb(228, 228, 228);
+ padding: 0.1px;
+ padding-left: 5px;
+ display: flex;
+ align-items: center;
+}
+.com-tit{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.send{
+    background: rgb(31, 98, 255);
+    border-radius: 5px;
+    border: #fff 1px solid;
+    color: white;
+    padding-inline: 7px;
+    padding-block: 5px;
+    font-size: 17px;
+    width: 8%;
+    /* background: #9cff9c74; */
+}
+
+/* ================================================ */
+
+
+
+.content{
+        margin: auto;
+        max-width:700px;
+}
+
+.postats3{
+
+    height: 100vh;
+}
+
+.content .postats3 .post3{
+        margin-top: 20px;
+   background: rgb(255, 255, 255);
+   border: #797979 1px solid;
+   box-shadow: #797979 5px 5px 5px;
+   
+}
+.content .postats3 .post3 .hedars{
+   background: rgb(228, 228, 228);
+   display: flex;
+   align-items: center;
+   padding: 0;
+   padding: 3px;
+   padding-left: 7px;
+   border-bottom: #797979 1px solid;
+}
+.content .postats3 .post3 .hedars img{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 5px;
+
+}
+.content .postats3 .post3 .bode{
+padding: 5px;
+   border-bottom: #797979 1px solid;
+
+}
+.content .postats3 .post3 .bode img{
+    width: 100%;
+    height: 350px;
+}
+
+.content .postats3 .post3 .bode p{
+    margin: 0px;
+    color:#838383 ;
+}
+.content .postats3 .post3 .bode h2,
+.content .postats3 .post3 .bode h5
+{
+    margin: 5px;
+}
+.content .postats3 .post3 .bode h5{
+    font-size: 15px;
+    color: #3e3e3e;
+}
+.content .postats3 .post3 .foter{
+   background: rgb(228, 228, 228);
+ padding: 0.1px;
+ padding-left: 5px;
+ display: flex;
+ align-items: center;
+}
+/* ======================================== */
+.loader {
+    width: 48px;
+    height: 48px;
+    border: 5px solid #FFF;
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+    }
+
+    @keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+    } 
+
+
+
+
