@@ -1,6 +1,4 @@
 
-
-
  let mod = document.querySelector('#mod2')
   let error = document.querySelector('#error')
   let model = document.querySelector('.model')
