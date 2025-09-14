@@ -66,7 +66,7 @@ body{
    background: rgb(255, 255, 255);
    border: #797979 1px solid;
    box-shadow: #797979 5px 5px 5px;
-   
+   margin-inline: 20px !important;
 }
 .content .postats .post .hedars{
    background: rgb(228, 228, 228);
