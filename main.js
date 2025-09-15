@@ -243,7 +243,7 @@ function btn_edit(post){
 let title = document.querySelector('#title9').value = post2.title
 let body = document.querySelector('#body9').value = post2.body
 id5 = post2.id
-  mod5.style="display:flex; height: 100vh; width: 100%;  justify-content: center; position: absolute; align-items: center;top: 0; background: #e8e8e861;"
+  mod5.style="display:flex; height: 100vh; width: 100%;  justify-content: center; position: fixed; align-items: center;top: 0; background: #e8e8e861;"
 
 }
 
