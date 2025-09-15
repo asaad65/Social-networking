@@ -10,7 +10,7 @@
 let addInPost = document.querySelector('.addInPost')
 let Profile = document.querySelector('#Profile')
 let img3 = document.querySelector('#img9')
-
+ 
 function getLogin(){
  mod.style = 'position: absolute; display: block; height: 100vh; width: 100%; display: flex; justify-content: center;  background: rgba(240, 240, 240, 0.65); align-items: center;'
 }
