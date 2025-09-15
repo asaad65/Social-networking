@@ -10,6 +10,7 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     
 </head>
+
 <body>
     <div style="display: flex; justify-content: center; align-items: center; position: fixed; top: 0px; bottom: 0px; left: 0px;right: 0px; margin: auto; background: #858585b6; width: 100px; height: 100px; border-radius: 10px; z-index: 9999;" id="lolo">
     <span class="loader"></span>
@@ -111,8 +112,8 @@ function post8(){
                 <div class="bode">
                    ${image ? `<img src="${elpost.image}" alt="">`:'' }  
                     <p>${elpost.created_at}</p>
-                    <h2>${elpost.title? elpost.title : '' }</h2>
-                    <h5>${elpost.body}</h5>
+                    <h2 class ='contenerText'>${elpost.title? elpost.title : '' }</h2>
+                    <h5 class ='contenerText'>${elpost.body}</h5>
                 </div>
                 <div class="foter">
                   <span class="material-symbols-outlined">edit</span> <h3>(${elpost.comments_count})comment</h3> 
