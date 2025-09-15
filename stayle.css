@@ -255,11 +255,7 @@ padding: 5px;
 border: 1px solid #000000;
 
 }
-.contenerText{
-     word-wrap: break-word;
-  overflow-wrap: break-word;
-  white-space: normal;
-}
+
 
 
 
@@ -315,6 +311,9 @@ padding: 5px;
 .content .postats2 .post2 .bode h5
 {
     margin: 5px;
+    word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
 }
 .content .postats2 .post2 .bode h5{
     font-size: 15px;
