@@ -102,6 +102,9 @@ padding: 5px;
 .content .postats .post .bode h5
 {
     margin: 5px;
+        word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
 }
 .content .postats .post .bode h5{
     font-size: 15px;
@@ -399,6 +402,9 @@ padding: 5px;
 .content .postats3 .post3 .bode h5
 {
     margin: 5px;
+        word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
 }
 .content .postats3 .post3 .bode h5{
     font-size: 15px;
