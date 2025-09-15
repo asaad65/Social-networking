@@ -417,6 +417,11 @@ padding: 5px;
  display: flex;
  align-items: center;
 }
+.masseg{
+        word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+}
 /* ======================================== */
 .loader {
     width: 48px;
