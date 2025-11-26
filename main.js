@@ -84,9 +84,9 @@
     }
     
      function Loader(Show){
-      const Loader = document.querySelector("#Loader")
+      const spinnerWrapper = document.querySelector("#spinnerWrapper")
       if(Show){
-       Loader.innerHTML = 
+       spinnerWrapper.innerHTML = 
        `
         <div class="d-flex justify-content-center my-2">
               <div class="spinner-border text-primary" style="width: 2rem; height: 2rem; font-width:bold;" role="status">
@@ -95,7 +95,7 @@
         </div>
        `
        }else{
-        Loader.innerHTML = `<div></div>`
+        spinnerWrapper.innerHTML = `<div></div>`
        }
     }
 
