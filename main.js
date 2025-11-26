@@ -85,6 +85,7 @@
     
      function Loader(Show){
       const spinnerWrapper = document.querySelector("#spinnerWrapper")
+       if (!spinnerWrapper) return;
       if(Show){
        spinnerWrapper.innerHTML = 
        `
