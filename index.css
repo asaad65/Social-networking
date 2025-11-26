@@ -1,0 +1,27 @@
+.btn-hover:hover {
+  background: rgb(255, 255, 255) !important;
+  transition: all ease 0.5s !important;
+  color: rgb(0, 119, 255) !important;
+  border-color: rgb(0, 119, 255) !important;
+}
+.btn-hover-Register:hover{
+    background: rgb(0, 119, 255) !important;
+  transition: all ease 0.5s !important;
+  color: rgb(255, 255, 255) !important;
+  border-color: rgb(255, 255, 255) !important;
+}
+.username-hover:hover {
+  color: #0d6efd !important;
+  border-bottom: 1px solid #0d6efd !important;
+}
+
+.card-img-top {
+  object-fit: cover !important;
+  height: auto !important;
+  border-bottom: 1px solid #dee2e6 !important;
+}
+.btn-hover-logout:hover{
+  color: red !important;
+  background: white !important;
+  border-color:red !important;
+}

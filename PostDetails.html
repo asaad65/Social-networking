@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/index.css">
+    <title>Document</title>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+                  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</head>
+<body>
+   <nav class="container-lg rounded-bottom-3 d-flex align-items-center justify-content-between p-3 bg-primary">
+    <div class="d-flex gap-3 align-items-center">
+       <h2><a href="/" style="text-decoration: none; color: white;">Home</a></h2>
+         <div id="Showuser">
+
+        </div>
+    </div>
+   <div id="mood_user">
+   
+   </div>
+ </nav>
+    <div id="Post"></div>
+      <div id="ShowAddPostId" data-bs-toggle="modal" data-bs-target="#AddPostId">
+
+      </div>
+  <div id = "Loader"></div>
+   
+  <!-- Modal Login  -->
+<div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="myModalLabel"> Login</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="cansel"></button>
+      </div>
+      <span id="errorLogin" class="text-danger text-center"></span>
+      <div class="modal-body">
+        <input id="usernameLogin" type="text" class="w-100 p-2 rounded-2 border-2 border-primary" style="outline: none;" placeholder="username">
+        <input id="passwordLogin" type="password"class="w-100 p-2 rounded-2 border-2 border-primary mt-3" style="outline: none;" placeholder="password">
+        
+      </div>
+      <div class="modal-footer" style="direction: rtl;">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">cansel</button>
+        <button type="button" onclick="Login()" id="loginButton" class=" btn btn-primary">Login</button>
+      </div>
+    </div>
+  </div>
+</div>
+  <!-- Modal Register  -->
+<div class="modal fade" id="myModalRegister"  tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="myModalLabel"> Register</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="cansel"></button>
+      </div>
+      <div id="error_Register" class="text-danger text-center"></div>
+      <div class="modal-body">
+        <input type="text" id="Register_name" class="w-100 p-2 rounded-2 border-2 border-primary" style="outline: none;" placeholder="name">
+        <input type="text" id="Register_username" class="w-100 p-2 rounded-2 border-2 border-primary mt-3" style="outline: none;" placeholder="username">
+        <input type="password" id="Register_password" class="w-100 p-2 rounded-2 border-2 border-primary mt-3" style="outline: none;" placeholder="password">
+        <input type="email" id="Register_email" class="w-100 p-2 rounded-2 border-2 border-primary mt-3" style="outline: none;" placeholder="email">
+         <label for="Register_file" class="w-100 mt-3 d-block">
+            <div class="p-2 rounded-2 border-2 border-primary text-center bg-primary text-light fw-bold cursor-pointer" style="transition: 0.3s; outline: none;">
+            Choose a file 📁
+            </div> 
+          </label>
+        <input type="file" id="Register_file" class="d-none">
+
+        
+      </div>
+      <div class="modal-footer" style="direction: rtl;">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">cansel</button>
+        <button type="button" class=" btn btn-primary" id="RegisterButton" onclick="Register()">Register</button>
+      </div>
+    </div>
+  </div>
+</div>
+   <!-- Modal AddPost  -->
+<div class="modal fade" id="AddPostId" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="myModalLabel"> Add Post</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="cansel"></button>
+      </div>
+      <span id="errorAddPost" class="text-danger text-center"></span>
+      <div class="modal-body">
+        <input type="text" id="title" class="w-100 p-2 rounded-2 border-2 border-primary" style="outline: none;" placeholder="title">
+        <input type="body" id="body" class="w-100 p-2 rounded-2 border-2 border-primary mt-3" style="outline: none;" placeholder="body">
+          <label for="img" class="w-100 mt-3 d-block">
+            <div class="p-2 rounded-2 border-2 border-primary text-center bg-primary text-light fw-bold cursor-pointer" style="transition: 0.3s; outline: none;">
+            Choose a file 📁
+            </div> 
+          </label>
+        <input type="file" id="img" class="d-none">
+      </div>
+      <div class="modal-footer" style="direction: rtl;">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">cansel</button>
+        <button type="button" class=" btn btn-primary" id="Add" onclick="AddPost()">Add</button>
+      </div>
+    </div>
+  </div>
+</div>
+ <!-- Modal EditePost  -->
+<div class="modal fade" id="EditePost" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="myModalLabel"> Edite Post</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="cansel"></button>
+      </div>
+      <span id="errorAddPost" class="text-danger text-center"></span>
+      <div class="modal-body">
+        <input type="text" id="Editetitle" class="w-100 p-2 rounded-2 border-2 border-primary" style="outline: none;" placeholder="title">
+        <input type="body" id="Editebody" class="w-100 p-2 rounded-2 border-2 border-primary mt-3" style="outline: none;" placeholder="body">
+      </div>
+      <div class="modal-footer" style="direction: rtl;">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">cansel</button>
+        <button type="button" class=" btn btn-primary" id="Edit" onclick="EditePost()">Edit</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div  style="transition: all 0.5s ease;">
+<span id="errorSend" class=" position-fixed  alert alert-danger" style="right: 100px; bottom: -200px;"></span>
+</div>
+ 
+</body>
+
+
+
+<script src="/main.js"></script>
+<script>
+ const Post = document.querySelector('#Post') 
+ const urlsearch = new URLSearchParams(window.location.search)
+ const id = urlsearch.get('PostId')
+ let content = ''
+        let comments = ''
+    async function PostDetails(){
+         const userData = localStorage.getItem('user');
+          Loader(true)
+        try{
+        
+           const response = await axios.get(`https://tarmeezacademy.com/api/v1/posts/${id}`)
+              Loader(false)
+           const post = response.data.data;
+            let Portfolio =typeof post.author.profile_image == 'object' ? 'imegs/user.png': post.author.profile_image
+              let title =  post.title == null ? '' : post.title
+              let body =  post.body == null ? '' : post.body
+             
+             if(post.comments_count == 0){
+               comments =`<div class="text-center bg-primary-subtle ">No comments</div>`
+             }else{
+                          comments = post.comments.map((p) => {
+                const profile = typeof p.author.profile_image === 'object' || !p.author.profile_image
+                    ? 'imegs/user.png'
+                    : p.author.profile_image;
+
+                return `
+                    <div class="card-body d-flex gap-3 align-items-start mt-1 rounded-2 "  style="background-color:rgb(173,216,230) ;" dir="ltr">
+                    <img src="${profile}" 
+                        alt="User image" 
+                        class="rounded-circle border" 
+                        style="width: 48px; height: 48px; object-fit: cover;" />
+                    <div class="flex-grow-1">
+                        <h6 class="fw-bold text-primary mb-1">${p.author.username}</h6>
+                        <p class="mb-0 text-dark" style="white-space: pre-line;">${p.body}</p>
+                    </div>
+                    </div>
+                `;
+            }).join('');
+
+             }
+          
+       
+          
+
+
+           content = 
+           `
+         <div class="Post">
+  
+            <div class="container my-4">
+            <div class="card shadow-lg mx-auto" style="max-width: 768px;">
+              <!-- Header -->
+              <div class="d-flex align-items-center gap-3 rounded-top-circle  p-3 bg-light border-bottom">
+                <a href="/user.html?userId=${post.author.id}">
+                  <img src=${Portfolio} alt="User" class="rounded-circle" width="48" height="48" />
+                </a>
+                <a href="/user.html?userId=${post.author.id}" class="text-decoration-none username-hover">
+                  <strong>${post.author.username}</strong>
+                </a>
+                <div class="ms-auto">
+                    ${JSON.parse(localStorage.getItem('user'))?post.author.id == JSON.parse(localStorage.getItem('user')).user.id?`<button class="btn btn-sm btn-outline-secondary me-1"  data-bs-toggle="modal" data-bs-target="#EditePost" onclick="IdButton(${post.id}, '${title}', '${body}')">Edit</button>`:'':''}
+                  ${JSON.parse(localStorage.getItem('user'))?post.author.id == JSON.parse(localStorage.getItem('user')).user.id?` <button class="btn btn-sm btn-outline-danger"  onclick="DeletPost(${post.id})">Delete</button>`:'':''}
+                </div>
+              </div>
+     
+              ${typeof post.image === 'object' || !post.image ? '' : `<img class="card-img-top" src="${post.image}" alt="Post Image">`}
+              <!-- Post Content -->
+              <div class="card-body">
+                <p class="text-muted mb-1">${post.created_at}</p>
+                <h5 class="card-title">${title}</h5>
+                <p class="card-text">${body}</p>
+              </div>
+              <!-- Comments Footer -->
+              <a href="/PostDetails.html?PostId=${post.id}" class="text-decoration-none">
+                <div class="bg-secondary text-white p-2 d-flex justify-content-between align-items-center">
+                  <h6 class="mb-0 text-white">Comments</h6>
+                  ${post.comments_count == 0 ?(
+                    `<div></div>`
+                  ):(
+                    `<span class="bg-primary rounded-circle d-inline-block text-center text-white" style="width: 28px; height: 28px; line-height: 28px;">${'+' + post.comments_count}</span>`
+                  )}
+                  
+                </div>
+              </a>
+              <div class="card mb-3 shadow-sm border-0">
+                  ${comments}
+                
+            </div>
+            ${
+   
+
+              userData != null ?(
+                `
+                    <div class="w-100  d-flex align-items-center p-2 ">
+                      <input type="text" id="message" class="rounded-start-3 rounded-end-3 border-1 border-primary ps-2 py-2 position-relative" style="width: 100%; outline:none;">
+                      <button type="button" class=" py-2  rounded-end-3 position-absolute  border-0 bg-primary text-white" style="right: 8px;" id='send' onclick="send(${post.id})">send</button>      
+                    </div>
+                    `
+                  ):(
+                    `<div></div>`
+                  )
+           }
+          
+   
+          </div>
+        </div>
+  </div>
+           
+           
+           `
+        
+
+       
+
+
+         Post.innerHTML = content
+
+        } catch(erore){
+            Loader(false)
+          content = `
+          <div class='d-flex container  justify-content-center align-items-center mt-2'>
+           <div class=" alert alert-danger d-flex w-100  justify-content-center align-items-center "> ${erore}</div>
+          </div>
+          `
+          Post.innerHTML = content
+        }
+   
+    
+    }
+    PostDetails()
+   
+  
+</script>
+</html>
