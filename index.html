@@ -165,10 +165,10 @@
     <div class="card shadow-lg mx-auto" style="max-width: 768px;">
       <!-- Header -->
       <div class="d-flex align-items-center gap-3 rounded-top-circle  p-3 bg-light border-bottom">
-        <a href="/user.html?userId=${element.author.id}">
+        <a href="/Social-networking/user.html?userId=${element.author.id}">
           <img src=${img} alt="User" class="rounded-circle" width="48" height="48" />
         </a>
-        <a href="/user.html?userId=${element.author.id}" class="text-decoration-none username-hover">
+        <a href="/Social-networking/user.html?userId=${element.author.id}" class="text-decoration-none username-hover">
           <strong>${element.author.username}</strong>
         </a>
         <div class="ms-auto">
@@ -186,7 +186,7 @@
       </div>
 
       <!-- Comments Footer -->
-      <a href="/PostDetails.html?PostId=${element.id}" class="text-decoration-none">
+      <a href="/Social-networking/PostDetails.html?PostId=${element.id}" class="text-decoration-none">
         <div class="bg-secondary text-white p-2 d-flex justify-content-between align-items-center">
           <h6 class="mb-0 text-white">Comments</h6>
           ${element.comments_count == 0 ?(
