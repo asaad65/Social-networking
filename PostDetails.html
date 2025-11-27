@@ -12,7 +12,7 @@
 <body>
    <nav class="container-lg rounded-bottom-3 d-flex align-items-center justify-content-between p-3 bg-primary">
     <div class="d-flex gap-3 align-items-center">
-       <h2><a href="/" style="text-decoration: none; color: white;">Home</a></h2>
+       <h2><a href="/Social-networking/" style="text-decoration: none; color: white;">Home</a></h2>
          <div id="Showuser">
 
         </div>
@@ -187,10 +187,10 @@
             <div class="card shadow-lg mx-auto" style="max-width: 768px;">
               <!-- Header -->
               <div class="d-flex align-items-center gap-3 rounded-top-circle  p-3 bg-light border-bottom">
-                <a href="/user.html?userId=${post.author.id}">
+                <a href="/Social-networking/user.html?userId=${post.author.id}">
                   <img src=${Portfolio} alt="User" class="rounded-circle" width="48" height="48" />
                 </a>
-                <a href="/user.html?userId=${post.author.id}" class="text-decoration-none username-hover">
+                <a href="/Social-networking/user.html?userId=${post.author.id}" class="text-decoration-none username-hover">
                   <strong>${post.author.username}</strong>
                 </a>
                 <div class="ms-auto">
@@ -207,7 +207,7 @@
                 <p class="card-text">${body}</p>
               </div>
               <!-- Comments Footer -->
-              <a href="/PostDetails.html?PostId=${post.id}" class="text-decoration-none">
+              <a href="/Social-networking/PostDetails.html?PostId=${post.id}" class="text-decoration-none">
                 <div class="bg-secondary text-white p-2 d-flex justify-content-between align-items-center">
                   <h6 class="mb-0 text-white">Comments</h6>
                   ${post.comments_count == 0 ?(

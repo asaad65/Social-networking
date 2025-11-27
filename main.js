@@ -224,7 +224,7 @@ function user(){
     const img = typeof userData.user.profile_image == 'object'? 'imegs/user.png':userData.user.profile_image
     Showuser.innerHTML = `
          
-            <a href="/user.html?userId=${userData.user.id}">
+            <a href="/Social-networking/user.html?userId=${userData.user.id}">
              <img src=${img} style=" border-radius: 50%; width: 45px; height: 45px; margin-right: 5px;" alt="">
              <span style="font-size: large; font-weight: bolder; color: white;">${userData.user.username}</span>
             </a>
